@@ -3,12 +3,12 @@
 pragma solidity ^0.7.4;
 
 // ----------------------------------------------------------------------------
-// 'EASY COIN ' token contract
+// 'INFINITY GLOBAL ' token contract
 //
 // Deployed to : 0x803c698f680e702609fb09f7782bea2ccd3cbda0
-// Symbol      : EASY
-// Name        : EASY COIN
-// Total supply: 1000000000
+// Symbol      : IGL
+// Name        : INFINITY GLOBAL
+// Total supply: 20000000
 // Decimals    : 18
 // ----------------------------------------------------------------------------
 
@@ -108,7 +108,7 @@ contract Owned {
 // ERC20 Token, with the addition of symbol, name and decimals and assisted
 // token transfers
 // ----------------------------------------------------------------------------
-    contract EASYCOIN is ERC20, Owned, SafeMath {
+contract INFINITYGLOBAL is ERC20, Owned, SafeMath {
     string constant public symbol = "IGL";
     string constant public name = "INFINITY GLOBAL";
     uint8 constant public decimals = 18;

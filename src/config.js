@@ -5,14 +5,14 @@ export const myConfig = {
     METAMASK_URL: 'https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn',
     JACKPOT_LINES : [10, 50, 200, 500 ],
     JACKPOT_BETS: [0.001, 0.005, 0.015, 0.05, 0.15, 0.5], 
-    GENESIS_USER : '0x803c698f680e702609fb09f7782bea2ccd3cbda0',  
+    GENESIS_USER : '0x06CC76Ee59b1760702412Ee2CCdA27Cc2078e590',  
     //INFURA_API: 'wss://ropsten.infura.io/ws/v3/434ccecefa2543e293ff9cc3a556c87f',    
     //ETHERSCAN_DOMAIN: 'https://ropsten.etherscan.io/', 
     //CONTRACT_ADDRESS_HPEASY: '0x06EA177A9B215FC7E987EA6aEcF29d330A5102E2', //testnet, unoptomized: '0xf05c93e556bd03b382a44ed236f2607da3d569f2',  //added use token
     //CONTRACT_ADDRESS_EASYCOIN: '0x5c4DB9783541D6c303E02Cd7187b7179444dbd33', //testnet, unoptimized: '0x2619bfab748a9a215f5dc3123b80b32391ea44d5', //testnet  
     INFURA_API: 'wss://mainnet.infura.io/ws/v3/434ccecefa2543e293ff9cc3a556c87f',    
-    ETHERSCAN_DOMAIN: 'https://etherscan.io/', 
-    CONTRACT_ADDRESS_HPEASY: '0x0271A13327805652557b20d42e6b1c03015f9076',  //mainnet
-    CONTRACT_ADDRESS_EASYCOIN: '0x9e43f77F2484D2b9b1e2F88B2ce186147bCf4590', //mainnet
+    ETHERSCAN_DOMAIN: 'https://bscscan.com/', 
+    CONTRACT_ADDRESS_HPEASY: '0x923553db6fc9686af3e9281ea7de39cb0ea7dac5',  //mainnet
+    CONTRACT_ADDRESS_EASYCOIN: '0x21d1ea9d36fdef4bf3432052b3f77ecf85c86c73', //mainnet
     HPEASY_FIRST_BLOCK: 11171822
 }
