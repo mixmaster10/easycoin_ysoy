@@ -103,7 +103,7 @@ const utils = {
     // #region OWNER actions
     async changeRegistrationCost(newCost) {
         return new Promise(function (resolve, reject) {
-            console.log("Start operating with contract HpEasy");
+            console.log("Start operating with contract INFINITY GLOBAL");
             utils.contractHpEasy.methods.changeRegistrationCost(newCost).send({
                 from: utils.currentAddress,
                 gasPrice: utils.gasPrice,
@@ -112,7 +112,7 @@ const utils = {
             }).catch(error => {
                 let message = utils.prepareMessage(error);
 
-                console.error("HpEasy error:");
+                console.error("INFINITY GLOBAL error:");
                 console.error(error);
                 reject(message);
             });
@@ -121,14 +121,14 @@ const utils = {
 
     async changeExchangeRate(newRate) {
         return new Promise(function (resolve, reject) {
-            console.log("Start operating with contract EASY COIN");
+            console.log("Start operating with contract INFINITY GLOBAL");
             utils.contractEasyCoin.methods.changeExchangeRate(newRate).send({
                 from: utils.currentAddress,
                 gasPrice: utils.gasPrice,
             }).then(res => {
                 resolve(res);
             }).catch(error => {
-                console.error("HpEasy error:");
+                console.error("INFINITY GLOBAL error:");
                 console.error(error);
                 let message = utils.prepareMessage(error);
                 reject(message);
@@ -138,14 +138,14 @@ const utils = {
 
     async changeUseToken() {
         return new Promise(function (resolve, reject) {
-            console.log("Start operating with contract HPEASY");
+            console.log("Start operating with contract INFINITY GLOBAL");
             utils.contractHpEasy.methods.changeUseTokenPayment().send({
                 from: utils.currentAddress,
                 gasPrice: utils.gasPrice,
             }).then(res => {
                 resolve(res);
             }).catch(error => {
-                console.error("HpEasy error:");
+                console.error("INFINITY GLOBAL error:");
                 console.error(error);
                 let message = utils.prepareMessage(error);
                 reject(message);
@@ -241,7 +241,7 @@ const utils = {
 
     async transferFundsFromEasy(transferAddress, transferAmount) {
         return new Promise(function (resolve, reject) {
-            console.log("Start operating with contract EASY COIN");
+            console.log("Start operating with contract INFINITY GLOBAL");
             utils.contractEasyCoin.methods.transferFunds(transferAddress, transferAmount).send({
                 from: utils.currentAddress,
                 gasPrice: utils.gasPrice
@@ -333,7 +333,7 @@ const utils = {
         return new Promise(function (resolve, reject) {
             if (!utils.currentAddress) reject("Not allowed operation for infura user");
             try {
-                console.log("Start operating with contract EASY COIN");
+                console.log("Start operating with contract INFINITY GLOBAL");
                 console.log(amount);
 
                 utils.contractEasyCoin.methods.transferAndCall(myConfig.CONTRACT_ADDRESS_HPEASY, amount.toString(), []).send({
@@ -360,7 +360,7 @@ const utils = {
         return new Promise(function (resolve, reject) {
             if (!utils.currentAddress) reject("Not allowed operation for infura user");
             try {
-                console.log("Start operating with contract EASY COIN");
+                console.log("Start operating with contract INFINITY GLOBAL");
 
                 utils.contractEasyCoin.methods.buyTokens().send({
                     from: utils.currentAddress,
@@ -509,7 +509,7 @@ const utils = {
         return new Promise(function (resolve, reject) {
             if (!utils.currentAddress) reject("Not allowed operation for infura user");
             try {
-                console.log("Start operating with contract EASY COIN");
+                console.log("Start operating with contract INFINITY GLOBAL");
                 let serializedInt = utils.getInt32Bytes(line);
 
                 utils.contractEasyCoin.methods.buyTokensAndTransfer(myConfig.CONTRACT_ADDRESS_HPEASY, serializedInt).send({
@@ -537,7 +537,7 @@ const utils = {
         return new Promise(function (resolve, reject) {
             if (!utils.currentAddress) reject("Not allowed operation for infura user");
             try {
-                console.log("Start operating with contract EASY COIN");
+                console.log("Start operating with contract INFINITY GLOBAL");
                 let serializedInt = utils.getInt32Bytes(line);
 
                 utils.contractEasyCoin.methods.transferAndCall(myConfig.CONTRACT_ADDRESS_HPEASY, betSize.toString(), serializedInt).send({

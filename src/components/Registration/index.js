@@ -147,7 +147,7 @@ class Registration extends React.Component {
                             Swal.fire({
                                 title: 'Success',
                                 icon: 'success',
-                                html: 'Welcome to the HPEASY ETH family! <br>You will be redirected to your dashboard'
+                                html: 'Welcome to the INFINITY GLOBAL family! <br>You will be redirected to your dashboard'
                             }).then((result) => {
                                 this.setState({ loader: false });
                                 this.props.history.push('/dashboard');
@@ -167,7 +167,7 @@ class Registration extends React.Component {
                 }
             ).catch(error => {
                 this.setState({ loader: false });
-                console.error("HPEASY ETH error");
+                console.error("INFINITY GLOBAL error");
                 console.error(error);
             });
     }

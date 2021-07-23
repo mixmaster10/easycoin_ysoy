@@ -531,7 +531,7 @@ class Dashboard extends React.Component {
 
             let html = 'We have noticed that your ';
             html += (isOneMatrix ? 'matrix ' : 'matrices ') + this.state.skippedMatrices.join(', ');
-            html += (isOneMatrix ? ' was' : ' were') + ' skipped. <p>To be able cycle again please purchase new HPEASY<br>';
+            html += (isOneMatrix ? ' was' : ' were') + ' skipped. <p>To be able cycle again please purchase new INFINITY GLOBAL<br>';
             Swal.fire({
                 icon: 'info',
                 title: 'Skipped matrices detected',
@@ -738,7 +738,7 @@ class Dashboard extends React.Component {
                 showCancelButton: true,
                 confirmButtonText: "Let's do it now!",
                 cancelButtonText: "I need to think",
-                html: 'We have noticed that you have already paid <b>' + jackpotQueue.betSize + "&nbsp;ETH</b> to join Jackpot <b>line&nbsp;" + jackpotQueue.line + "</b>.</p> <p>Only one step's left to join this jackpot line: <br><b>" + jackpotQueue.betSize + "&nbsp;EASY</b> payment needed <br>" + (this.state.easyBalance >= jackpotQueue.betSize ? "<i>(it will be withdrawn from your&nbsp;EASY balance)</i>" : (" <i>(it costs <b>" + jackpotQueue.betSize / this.state.ETH_TO_EASY + "&nbsp;EASY</b>)<i></p>"))
+                html: 'We have noticed that you have already paid <b>' + jackpotQueue.betSize + "&nbsp;BNB</b> to join Jackpot <b>line&nbsp;" + jackpotQueue.line + "</b>.</p> <p>Only one step's left to join this jackpot line: <br><b>" + jackpotQueue.betSize + "&nbsp;IGL</b> payment needed <br>" + (this.state.easyBalance >= jackpotQueue.betSize ? "<i>(it will be withdrawn from your&nbsp;IGL balance)</i>" : (" <i>(it costs <b>" + jackpotQueue.betSize / this.state.ETH_TO_EASY + "&nbsp;IGL</b>)<i></p>"))
             }).then(result => {
                 if (result.isConfirmed) {
                     this.joinJackpotEasy(jackpotQueue.line, jackpotQueue.betSize, false);
@@ -751,7 +751,7 @@ class Dashboard extends React.Component {
                 showCancelButton: true,
                 confirmButtonText: "Let's do it now!",
                 cancelButtonText: "I need to think",
-                html: 'We have noticed that you have already paid <b>' + jackpotQueue.betSize + "&nbsp;EASY</b> to join Jackpot <b>line&nbsp;" + jackpotQueue.line + "</b>.</p> <p>Only one step's left to join this jackpot line: <br><b>" + jackpotQueue.betSize + "&nbsp;ETH</b> payment needed</p>"
+                html: 'We have noticed that you have already paid <b>' + jackpotQueue.betSize + "&nbsp;IGL</b> to join Jackpot <b>line&nbsp;" + jackpotQueue.line + "</b>.</p> <p>Only one step's left to join this jackpot line: <br><b>" + jackpotQueue.betSize + "&nbsp;BNB</b> payment needed</p>"
             }).then(result => {
                 if (result.isConfirmed) {
                     this.joinJackpotEth(jackpotQueue.line, jackpotQueue.betSize, false);
@@ -769,7 +769,7 @@ class Dashboard extends React.Component {
 
         Swal.fire({
             icon: 'info',
-            title: 'Participants of line ' + line + ',<br> bet size ' + betSize + '&nbsp;ETH/EASY',
+            title: 'Participants of line ' + line + ',<br> bet size ' + betSize + '&nbsp;BNB/IGL',
             html: html
         });
     }
@@ -784,7 +784,7 @@ class Dashboard extends React.Component {
                     title: 'Confirm your bet',
                     showCancelButton: true,
                     confirmButtonText: "Let's go!",
-                    html: 'Do you confirm you want to pay <b>' + betSize + "&nbsp;ETH</b> <br>  to join Jackpot <b>" + line + "&nbsp;line</b> <p>Jackpot size is <b>" + (betSize * line * 0.9).toFixed(3) + " ETH</b></p>",
+                    html: 'Do you confirm you want to pay <b>' + betSize + "&nbsp;BNB</b> <br>  to join Jackpot <b>" + line + "&nbsp;line</b> <p>Jackpot size is <b>" + (betSize * line * 0.9).toFixed(3) + " BNB</b></p>",
                 }).then(result => {
                     if (result.isConfirmed) {
                         this.joinJackpotEth(line, betSize, false);
@@ -811,7 +811,7 @@ class Dashboard extends React.Component {
                 showCancelButton: true,
                 confirmButtonText: "Let's finish previous bet",
                 cancelButtonText: "I need to think",
-                html: "We have noticed that you have unfinished bet (line&nbsp;" + queue.line + ", bet size " + queue.betSize + "&nbsp;ETH/EASY). <p>You can't make a new bet without finishing payment for the previous bet. <p>Do you want to finish payment?",
+                html: "We have noticed that you have unfinished bet (line&nbsp;" + queue.line + ", bet size " + queue.betSize + "&nbsp;BNB/IGL). <p>You can't make a new bet without finishing payment for the previous bet. <p>Do you want to finish payment?",
             }).then(result => {
                 if (result.isConfirmed) {
                     if (queue.isTokensPaid) {
@@ -834,7 +834,7 @@ class Dashboard extends React.Component {
                     title: 'Confirm your bet',
                     showCancelButton: true,
                     confirmButtonText: "Let's go!",
-                    html: 'Do you confirm you want to pay <b>' + betSize + "&nbsp;EASY</b> <br> " + (isExtraTokensNeeded ? "<i>(it cost <b>" + betSize / this.state.ETH_TO_EASY + "&nbspETH</b>)</i>" : "<i>(it will be withdrawn from your&nbsp;EASY balance)</i><br>") + " to join Jackpot <b>" + line + "&nbsp;line</b> <p>Jackpot size is <b>" + (betSize * line * 0.9).toFixed(3) + " ETH/EASY</b></p>",
+                    html: 'Do you confirm you want to pay <b>' + betSize + "&nbsp;IGL</b> <br> " + (isExtraTokensNeeded ? "<i>(it cost <b>" + betSize / this.state.ETH_TO_EASY + "&nbspBNB</b>)</i>" : "<i>(it will be withdrawn from your&nbsp;IGL balance)</i><br>") + " to join Jackpot <b>" + line + "&nbsp;line</b> <p>Jackpot size is <b>" + (betSize * line * 0.9).toFixed(3) + " BNB/IGL</b></p>",
                 }).then(result => {
                     if (result.isConfirmed) {
                         this.joinJackpotEasy(line, betSize, true);
@@ -873,8 +873,8 @@ class Dashboard extends React.Component {
 
     processJoinJackpotEasySuccess(line, betSize, isEthNeeded) {
         let html = isEthNeeded
-            ? "<p>Nice, " + betSize + "&nbsp;EASY is paid! <br> One step separates you from your luck!</p> <p>Now you need to pay " + betSize + "&nbsp;ETH</p>"
-            : "<p>Congradulation! You have joined jackpot line <b>" + line + "</b> with bet size <b>" + betSize + "&nbsp;ETH/EASY</b></p>.<p>Jackpot prize is: <b>" + (line * betSize * 0.9).toFixed(3) + "&nbsp;ETH</b>!!!.</p><p>We wish you luck!</p>";
+            ? "<p>Nice, " + betSize + "&nbsp;IGL is paid! <br> One step separates you from your luck!</p> <p>Now you need to pay " + betSize + "&nbsp;BNB</p>"
+            : "<p>Congradulation! You have joined jackpot line <b>" + line + "</b> with bet size <b>" + betSize + "&nbsp;BNB/IGL</b></p>.<p>Jackpot prize is: <b>" + (line * betSize * 0.9).toFixed(3) + "&nbsp;BNB</b>!!!.</p><p>We wish you luck!</p>";
 
         Swal.fire({
             icon: isEthNeeded ? 'info' : 'success',
@@ -899,7 +899,7 @@ class Dashboard extends React.Component {
         await Utils.joinJackpotEth(line, (betSize * 1000000).toString() + "000000000000")
             .then(
                 result => {
-                    let html = "Congradulation! You have joined jackpot line <b>" + line + "</b> with bet size <b>" + betSize + "&nbsp;ETH/EASY</b>.<p>Jackpot prize is: <b>" + (line * betSize * 0.9).toFixed(3) + "&nbsp;ETH</b>!!!.</p><p>We wish you luck!</p>";
+                    let html = "Congradulation! You have joined jackpot line <b>" + line + "</b> with bet size <b>" + betSize + "&nbsp;BNB/IGL</b>.<p>Jackpot prize is: <b>" + (line * betSize * 0.9).toFixed(3) + "&nbsp;BNB</b>!!!.</p><p>We wish you luck!</p>";
 
                     Swal.fire({
                         title: 'Success',
@@ -1021,12 +1021,12 @@ class Dashboard extends React.Component {
                             </h1>
                             <h1 className="id_third_h1">
                                 <span className="user-direct">{this.state.directReferrals} </span>
-                                <span><span className="user-earnings-total">{(this.state.matrixEarningEth + this.state.hpEarningEth).toFixed(4)}</span> ETH / {(this.state.matrixEarningEth + this.state.hpEarningEth).toFixed(4)} EASY</span></h1>
+                                <span><span className="user-earnings-total">{(this.state.matrixEarningEth + this.state.hpEarningEth).toFixed(4)}</span> BNB / {(this.state.matrixEarningEth + this.state.hpEarningEth).toFixed(4)} IGL</span></h1>
                             <div className="cards_first">
                                 <div className="cards_front">MATRIX</div>
                                 <div className="cards_back">
                                     <h1>$<span className="user-earnings-matrix-usd">{(this.state.matrixEarningEth * this.state.ETH_TO_USD).toFixed(2)}</span> {this.state.matrixEarningEth !== 0 ? " + $" + (this.state.matrixEarningEth * this.state.ETH_TO_USD / this.state.ETH_TO_EASY).toFixed(2) : ""}</h1>
-                                    <h3><span className="user-earnings-matrix">{this.state.matrixEarningEth}</span> ETH + {this.state.matrixEarningEth} EASY</h3>
+                                    <h3><span className="user-earnings-matrix">{this.state.matrixEarningEth}</span> BNB + {this.state.matrixEarningEth} IGL</h3>
                                     <h4 className="user-matrices-cnt">{this.state.matricesCnt}</h4>
                                 </div>
                             </div>
@@ -1034,7 +1034,7 @@ class Dashboard extends React.Component {
                                 <div className="cards_front">HP</div>
                                 <div className="cards_back">
                                     <h1>$<span className="user-earnings-hp-usd">{(this.state.hpEarningEth * this.state.ETH_TO_USD).toFixed(2)}</span> {this.state.hpEarningEth !== 0 ? " + $" + (this.state.hpEarningEth * this.state.ETH_TO_USD / this.state.ETH_TO_EASY).toFixed(2) : ''}</h1>
-                                    <h3><span className="user-earnings-hp">{this.state.hpEarningEth}</span> ETH + {this.state.hpEarningEth} EASY</h3>
+                                    <h3><span className="user-earnings-hp">{this.state.hpEarningEth}</span> BNB + {this.state.hpEarningEth} IGL</h3>
                                     <h4><span className="user-hp-cnt">{this.state.matricesCnt}</span>/150</h4>
                                 </div>
                             </div>
@@ -1206,8 +1206,8 @@ class Dashboard extends React.Component {
                                         <th>HASH</th>
                                         <th>SYSTEM</th>
                                         <th>DATE</th>
-                                        <th>$/ETH</th>
-                                        <th>$/EASY</th>
+                                        <th>$/BNB</th>
+                                        <th>$/IGL</th>
                                     </tr>
                                 </thead>
                                 <tbody className="tbody">
@@ -1243,12 +1243,12 @@ class Dashboard extends React.Component {
                                         <div key={betLine.line + "-" + betLine.betSize} className="line-info-wrapper" style={{ marginBottom: betLine.winnersCount > 0 ? '' : '50px' }}>
                                             <div className="line-info">
                                                 <span className="line-label"><span>LINE: </span> {betLine.line} </span>
-                                                <span className="bet-label"><span>BET SIZE: </span> {betLine.betSize} ETH/EASY</span>
+                                                <span className="bet-label"><span>BET SIZE: </span> {betLine.betSize} BNB/IGL</span>
                                             </div>
                                             <div>
                                                 <div className="bet-fill-progress" style={{ background: 'linear-gradient(to right, #6286d2 0%, #3063bc ' + (betLine.betsCount * 100) / betLine.line + '%, #bac4d8 0%)' }}>{betLine.betsCount}</div>
                                                 <div className="buy-easy join-jackpot" onClick={() => this.handleJoinJackpot(betLine.line, betLine.betSize)}>JOIN</div>
-                                                <p><span className="sub-label">Jackpot size: </span><b>{(betLine.line * betLine.betSize * 0.9).toFixed(3)} ETH + {(betLine.line * betLine.betSize * 0.9).toFixed(3)} EASY</b></p>
+                                                <p><span className="sub-label">Jackpot size: </span><b>{(betLine.line * betLine.betSize * 0.9).toFixed(3)} BNB + {(betLine.line * betLine.betSize * 0.9).toFixed(3)} IGL</b></p>
                                                 <p style={{ display: betLine.winnersCount > 0 ? 'block' : 'none' }} ><span className="sub-label">Total winners:</span> <b>{betLine.winnersCount}</b></p>
                                                 <p style={{ display: betLine.lastWinner ? 'block' : 'none' }}>
                                                     <span className="sub-label">Last winner:</span> <span className="address-winner">

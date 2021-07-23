@@ -122,14 +122,14 @@ class Admin extends React.Component {
                         onLoaderChange={this.onLoaderChange.bind(this)} />
                     : this.state.isUnaccaptedOwnerHpEasy
                         ? <AcceptOwnership
-                            contractName="HPEASY ETH"
+                            contractName="INFINITY GLOBAL"
                             contractAddress={myConfig.CONTRACT_ADDRESS_HPEASY}
                             owner={this.state.ownerHpEasy}
                             unaccaptedOwner={this.state.unaccaptedOwnerHpEasy}
                             onLoaderChange={this.onLoaderChange.bind(this)} />
                         : <NotLoggedIn
                             owner={this.state.ownerHpEasy}
-                            contractName="HPEASY ETH" />
+                            contractName="INFINITY GLOBAL" />
                 }
                 <div className="separator"> </div>
 
@@ -142,14 +142,14 @@ class Admin extends React.Component {
                         onLoaderChange={this.onLoaderChange.bind(this)} />
                     : this.state.isUnaccaptedOwnerEasy
                         ? <AcceptOwnership
-                            contractName="EASY COIN" 
+                            contractName="INFINITY GLOBAL" 
                             contractAddress={myConfig.CONTRACT_ADDRESS_EASYCOIN}
                             owner={this.state.ownerEasy}
                             unaccaptedOwner={this.state.unaccaptedOwnerEasy}
                             onLoaderChange={this.onLoaderChange.bind(this)} />
                         : <NotLoggedIn
                             owner={this.state.ownerEasy}
-                            contractName="EASY COIN" />
+                            contractName="INFINITY GLOBAL" />
                 }
                 <div className="darkener" style={{ display: this.state.loader ? 'block' : 'none' }}></div>
                 <Loader

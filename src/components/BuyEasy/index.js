@@ -25,7 +25,7 @@ class BuyEasy extends React.Component {
 
         const { value: easyAmount } = await Swal.fire({
             //icon: 'info',
-            title: 'Buy EASY',
+            title: 'Buy IGL',
             input: 'number',
             showCancelButton: true,
             inputValidator: (value) => {
@@ -33,16 +33,16 @@ class BuyEasy extends React.Component {
                     return 'Entered value is empty or incorrect'
                 }
             },
-            html: 'Current exchange rate:<br>1 ETH&nbsp;=&nbsp;<b>' + this.props.ETH_TO_EASY + '&nbsp;EASY</b>. <p>How many EASY do you want to purchase</p>'
+            html: 'Current exchange rate:<br>1 BNB&nbsp;=&nbsp;<b>' + this.props.ETH_TO_EASY + '&nbsp;IGL</b>. <p>How many IGL do you want to purchase</p>'
         })
 
         if (easyAmount) {
             let ethAmount = easyAmount / this.props.ETH_TO_EASY;
             Swal.fire({
-                title: 'Buy EASY',
+                title: 'Buy IGL',
                 showCancelButton: true,
                 confirmButtonText: "Yes, purchase",
-                html: '<p>Are you sure you want to purchase <b>' + easyAmount + '&nbsp;EASY</b>?<p>It will cost ' + ethAmount + '&nbsp;ETH</p>'
+                html: '<p>Are you sure you want to purchase <b>' + easyAmount + '&nbsp;IGL</b>?<p>It will cost ' + ethAmount + '&nbsp;BNB</p>'
             }).then(result => {
                 if (result.isConfirmed)
                     this.buyEasy(easyAmount, ethAmount);
@@ -60,7 +60,7 @@ class BuyEasy extends React.Component {
                         title: 'Success',
                         icon: 'success',
                         confirmButtonText: 'Great',
-                        html: "Congradulation! You have purchased <b>" + easyAmount + "&nbsp;EASY</b>!<p>Add EASY smartcontract address <b>" + myConfig.CONTRACT_ADDRESS_EASYCOIN + "</b> to&nbsp;your ETHEREUM wallet</p><p>Current page will be reloaded</p>"
+                        html: "Congradulation! You have purchased <b>" + easyAmount + "&nbsp;IGL</b>!<p>Add IGL smartcontract address <b>" + myConfig.CONTRACT_ADDRESS_EASYCOIN + "</b> to&nbsp;your ETHEREUM wallet</p><p>Current page will be reloaded</p>"
                     }).then((result) => {
                         this.changeLoader(false);
                         window.location.reload();
@@ -99,8 +99,8 @@ class BuyEasy extends React.Component {
                     : (this.props.easyAccountBalance !== -1
                         ? (this.props.easyAccountBalance < 1000000
                             ? this.props.easyAccountBalance.toFixed(2) : (this.props.easyAccountBalance / 1000000).toFixed(2) + "M")
-                        : 0)}<span>EASY</span></div>
-                <div className="buy-easy" onClick={this.handleBuyEasy.bind(this)}>BUY EASY</div>
+                        : 0)}<span>IGL</span></div>
+                <div className="buy-easy" onClick={this.handleBuyEasy.bind(this)}>BUY IGL</div>
             </div>
         )
     }

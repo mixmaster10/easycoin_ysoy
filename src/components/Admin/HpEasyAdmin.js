@@ -135,7 +135,7 @@ class HpEasyAdmin extends React.Component {
             icon: 'question',
             title: 'Confirm registration cost change',
             showCancelButton: true,
-            html: 'Are you sure you want to change registration price to <b>' + this.state.registrationCostCandidate + " ETH/EASY</b> <br>(old registration cost is <i><b>" + this.state.registrationCost / 1000000000000000000 + " ETH/EASY</b></i>)"
+            html: 'Are you sure you want to change registration price to <b>' + this.state.registrationCostCandidate + " BNB/IGL</b> <br>(old registration cost is <i><b>" + this.state.registrationCost / 1000000000000000000 + "BNB/IGL</b></i>)"
         }).then((result) => {
             if (result.isConfirmed) {
                 this.chageRegistrationCost();
@@ -153,7 +153,7 @@ class HpEasyAdmin extends React.Component {
                     Swal.fire({
                         icon: 'success',
                         title: 'Success',
-                        html: 'Nice! Registration cost has been changed to ' + this.state.registrationCostCandidate + ' ETH/EASY. <br>Current page will be reloaded'
+                        html: 'Nice! Registration cost has been changed to ' + this.state.registrationCostCandidate + ' BNB/IGL. <br>Current page will be reloaded'
                     }).then(result => {
                         this.changeLoader(false);
                         window.location.reload();
@@ -234,7 +234,7 @@ class HpEasyAdmin extends React.Component {
             Swal.fire({
                 icon: 'warning',
                 title: 'Not enough funds',
-                text: 'Contract balance is <b>' + this.state.balance + ' ETH</b>, and it\'s less than the entered transfer amount ' + transferAmount + ' ETH'
+                text: 'Contract balance is <b>' + this.state.balance + ' BNB</b>, and it\'s less than the entered transfer amount ' + transferAmount + ' ETH'
             })
             return;
         } else {
@@ -281,7 +281,7 @@ class HpEasyAdmin extends React.Component {
             icon: 'question',
             title: 'Confirm transfer funds',
             showCancelButton: true,
-            html: 'Are you sure you want to transfer <b>' + this.state.transferAmount + " ETH</b> from <b>EASY&nbsp;smartcontract</b> to <b>" + this.state.transferAddress + "</b> address? This action is irreversible!"
+            html: 'Are you sure you want to transfer <b>' + this.state.transferAmount + " ETH</b> from <b>IGL&nbsp;smartcontract</b> to <b>" + this.state.transferAddress + "</b> address? This action is irreversible!"
         }).then((result) => {
             if (result.isConfirmed) {
                 this.transferFunds();
@@ -299,7 +299,7 @@ class HpEasyAdmin extends React.Component {
                     Swal.fire({
                         icon: 'success',
                         title: 'Success',
-                        html: 'Nice! <b>' + this.state.transferAmount + 'ETH</b>s were transfered to <b>' + this.state.transferAddress + '</b>. '
+                        html: 'Nice! <b>' + this.state.transferAmount + 'BNB</b>s were transfered to <b>' + this.state.transferAddress + '</b>. '
                     }).then(result => {
                         this.changeLoader(false);
                     });
@@ -334,7 +334,7 @@ class HpEasyAdmin extends React.Component {
             icon: 'question',
             title: 'Confirm token use change police',
             showCancelButton: true,
-            html: 'Are you sure you want to change token use policy? <br></i>(current token policy is <b>' + (this.state.useToken ?  '' : 'not') + ' to use</b> EASY COIN as payment method</i>)'
+            html: 'Are you sure you want to change token use policy? <br></i>(current token policy is <b>' + (this.state.useToken ?  '' : 'not') + ' to use</b> IGL COIN as payment method</i>)'
         }).then((result) => {
             if (result.isConfirmed) {
                 this.chageUseToken();
@@ -352,7 +352,7 @@ class HpEasyAdmin extends React.Component {
                     Swal.fire({
                         icon: 'success',
                         title: 'Success',
-                        html: 'Nice! EASY COIN use policy has been changed!<br>Current page will be reloaded'
+                        html: 'Nice! IGL COIN use policy has been changed!<br>Current page will be reloaded'
                     }).then(result => {
                         this.changeLoader(false);
                         window.location.reload();
@@ -397,7 +397,7 @@ class HpEasyAdmin extends React.Component {
             icon: 'question',
             title: 'Confirm owner change',
             showCancelButton: true,
-            html: 'Are you sure you want to change <b>HPEASY contract</b> owner to <b>' + this.state.newOwnerCandidate + "</b> <br>(current contract owner is <i>" + this.props.owner + "</i>)"
+            html: 'Are you sure you want to change <b>INFINITY GLOBAL contract</b> owner to <b>' + this.state.newOwnerCandidate + "</b> <br>(current contract owner is <i>" + this.props.owner + "</i>)"
         }).then((result) => {
             if (result.isConfirmed) {
                 this.chageOwner();
@@ -415,7 +415,7 @@ class HpEasyAdmin extends React.Component {
                     Swal.fire({
                         icon: 'success',
                         title: 'Success',
-                        html: 'Nice! HPEASY ETH contract ownership has been transfered to <b>' + this.state.newOwnerCandidate + '</b>. <br>New contract owner must login to this page and accept ownership, meanwhile <b>' + this.props.owner + '</b> will stay the contract owner<br>Current page will be reloaded'
+                        html: 'Nice! INFINITY GLOBAL contract ownership has been transfered to <b>' + this.state.newOwnerCandidate + '</b>. <br>New contract owner must login to this page and accept ownership, meanwhile <b>' + this.props.owner + '</b> will stay the contract owner<br>Current page will be reloaded'
                     }).then(result => {
                         this.changeLoader(false);
                         window.location.reload();
@@ -434,7 +434,7 @@ class HpEasyAdmin extends React.Component {
     render() {
         return (
             <div className="admin-sub-block">
-                <h1>HPEASY ETH ADMIN</h1>
+                <h1>INFINITY GLOBAL ADMIN</h1>
                 <p>Contract address:
                     <a target="_blank" rel="noopener noreferrer" href={myConfig.ETHERSCAN_DOMAIN + "address/" + myConfig.CONTRACT_ADDRESS_HPEASY}>{myConfig.CONTRACT_ADDRESS_HPEASY}</a>
                 </p>
@@ -446,7 +446,7 @@ class HpEasyAdmin extends React.Component {
                             CURRENT REGISTRATION COST:
                         </label>
                         <div className="num-value">
-                            {this.state.registrationCost / 1000000000000000000} ETH/EASY
+                            {this.state.registrationCost / 1000000000000000000} BNB/IGL
                         </div>
                     </div>
                     <div className="subDiv">
@@ -454,7 +454,7 @@ class HpEasyAdmin extends React.Component {
                             NEW REGISTRATION COST:
                         </label>
                         <input type="number" className="numberInput" onChange={this.handleRegistrationCostValueChange.bind(this)} />
-                        <div> ETH</div>
+                        <div> BNB</div>
                         <div className="confirm-button" onClick={this.handleChageRegistrationCost.bind(this)}>Change</div>
                     </div>
                 </div>
@@ -474,7 +474,7 @@ class HpEasyAdmin extends React.Component {
                             NEW BUNCH CYCLES LIMIT:
                         </label>
                         <input type="number" className="numberInput" onChange={this.handleBunchCyclesValueChange.bind(this)} />
-                        <div> ETH</div>
+                        <div> BNB</div>
                         <div className="confirm-button" onClick={this.handleChageBunchCycles.bind(this)}>Change</div>
                     </div>
                 </div>
@@ -521,14 +521,14 @@ class HpEasyAdmin extends React.Component {
                     </div>
                 </div>
 
-                <h3>HPEASY ETH contract funds</h3>
+                <h3>INFINITY GLOBAL contract funds</h3>
                 <div className="data-change-container">
                     <div className="subDiv">
                         <label>
-                            TOTAL HPEASY CONTRACT BALANCE:
+                            TOTAL INFINITY GLOBAL BALANCE:
                         </label>
                         <div className="num-value">
-                            {this.state.balance} ETH
+                            {this.state.balance} BNB
                         </div>
                     </div>
                     <div className="subDiv">
@@ -536,7 +536,7 @@ class HpEasyAdmin extends React.Component {
                             TRANSFER AMOUNT:
                         </label>
                         <input type="number" className="numberInput" onChange={this.handleTransferAmountChange.bind(this)} />
-                        <div> ETH</div>
+                        <div> BNB</div>
                     </div>
                     <div className="subDiv">
                         <label className="short">
@@ -547,7 +547,7 @@ class HpEasyAdmin extends React.Component {
                     </div>
                 </div>
 
-                <h3>HPEASY ETH smartcontract owner</h3>
+                <h3>INFINITY GLOBAL smartcontract owner</h3>
                 <div className="data-change-container">
                     <div className="subDiv">
                         <label className="short">

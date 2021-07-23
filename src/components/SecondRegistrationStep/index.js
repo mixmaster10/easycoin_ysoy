@@ -127,7 +127,7 @@ class SecondRegistrationStep extends React.Component {
                 .catch(
                     error => {
                         this.setState({ loader: false });
-                        console.error("HPEASY ETH error");
+                        console.error("INFINITY GLOBAL error");
                         console.error(error);
                         this.setState({ loader: false });
                     });
@@ -140,7 +140,7 @@ class SecondRegistrationStep extends React.Component {
                 .catch(
                     error => {
                         this.setState({ loader: false });
-                        console.error("HPEASY ETH error");
+                        console.error("INFINITY GLOBAL error");
                         console.error(error);
                         this.setState({ loader: false });
                     });
@@ -152,7 +152,7 @@ class SecondRegistrationStep extends React.Component {
         Swal.fire({
             title: 'Success',
             icon: 'success',
-            html: 'Welcome to the HPEASY ETH family! <br>You will be redirected to your dashboard'
+            html: 'Welcome to the INFINITY GLOBAL family! <br>You will be redirected to your dashboard'
         }).then((result) => {
             this.setState({ loader: false });
             this.props.history.push('/dashboard');
@@ -173,7 +173,7 @@ class SecondRegistrationStep extends React.Component {
     render() {
         let text = 'To complete your registration you need to ' + (this.state.isExtraTokenNeeded ? 'purchase ' + this.state.REGISTRATION_COST_ETH + ' EASY (cost ' + this.state.REGISTRATION_COST_EASY_ETH_EQUIVALENT / 1000000000000000000 + ' ETH) and send the to the HPEASY ETH smartcontract' : 'send ' + this.state.REGISTRATION_COST_ETH + ' EASY COIN to the HPEASY ETH smartcontract')
         if (!this.state.isEthPaid && this.state.isEasyPaid) {
-            text = this.state.REGISTRATION_COST_ETH + ' EASY COIN is paid. Nice! To complete your registration you need to go to registration page and trasfer ' + this.state.REGISTRATION_COST_ETH + ' ETH to the HPEASY ETH smartcontract'
+            text = this.state.REGISTRATION_COST_ETH + ' INFINITY GLOBAL is paid. Nice! To complete your registration you need to go to registration page and trasfer ' + this.state.REGISTRATION_COST_ETH + ' BNB to the INFINITY GLOBAL smartcontract'
         }
 
         return (

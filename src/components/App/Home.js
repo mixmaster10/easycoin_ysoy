@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { myConfig } from '../../config.js';
 import BuyEasy from './../BuyEasy'; 
-import logo from '../../assets/logo-.svg';
+import logo from '../../assets/nlogo.png';
 import Utils from '../../utils';
 import './Home.scss';
 

@@ -34,7 +34,7 @@ class BuyHpEasy extends React.Component {
                 showCancelButton: true,
                 cancelButtonText: 'Got it',
                 confirmButtonText: 'Ok, let\'s login/register',
-                html: "<p>To purchase HPEASY you need to login to your dashboard</p><p>If you want to login to your dashboard, please go to home page and press 'LOGIN/REGISTER' button</p>"
+                html: "<p>To purchase INFINITY GLOBAL you need to login to your dashboard</p><p>If you want to login to your dashboard, please go to home page and press 'LOGIN/REGISTER' button</p>"
             }).then((result) => {
                 if (result.isConfirmed) {
                     this.props.history.push('/');
@@ -86,7 +86,7 @@ class BuyHpEasy extends React.Component {
             Swal.fire({
                 title: 'One step left',
                 icon: 'info',
-                html: "<p>We have noticed that you've already paid " + this.props.PURCHASE_COST_ETH / 1000000000000000000 + "&nbsp;EASY. </p><p> To finish your " + actionName + " please pay " + this.props.PURCHASE_COST_ETH / 1000000000000000000 + "&nbsp;ETH</p>",
+                html: "<p>We have noticed that you've already paid " + this.props.PURCHASE_COST_ETH / 1000000000000000000 + "&nbsp;IGL. </p><p> To finish your " + actionName + " please pay " + this.props.PURCHASE_COST_ETH / 1000000000000000000 + "&nbsp;BNB</p>",
                 showCancelButton: true,
                 confirmButtonText: 'Ok, let\'s do it',
                 cancelButtonText: 'I\'ll do it later',
@@ -105,10 +105,10 @@ class BuyHpEasy extends React.Component {
             });
         } else if (payment.isEthPaid && !payment.isTokensPaid) {
             let isExtraTokensNeeded = this.props.easyBalance - this.props.PURCHASE_COST_ETH / 1000000000000000000 < 0;
-            let html = "<p>We have noticed that you've already paid " + this.props.PURCHASE_COST_ETH / 1000000000000000000 + "&nbsp;ETH. </p>";
-            html += "<p> To finish your " + actionName + " please pay <b>" + this.props.PURCHASE_COST_ETH / 1000000000000000000 + "&nbsp;EASY</b><br>" + (isExtraTokensNeeded
-                ? "<i>(it costs just <b>" + this.props.PURCHASE_COST_EASY_ETH_EQUIVALENT / 1000000000000000000 + "&nbsp;ETH</i></b>)</p>"
-                : "<i>(it will be withdrawn from your&nbsp;EASY balance)</i>");
+            let html = "<p>We have noticed that you've already paid " + this.props.PURCHASE_COST_ETH / 1000000000000000000 + "&nbsp;BNB. </p>";
+            html += "<p> To finish your " + actionName + " please pay <b>" + this.props.PURCHASE_COST_ETH / 1000000000000000000 + "&nbsp;IGL</b><br>" + (isExtraTokensNeeded
+                ? "<i>(it costs just <b>" + this.props.PURCHASE_COST_EASY_ETH_EQUIVALENT / 1000000000000000000 + "&nbsp;BNB</i></b>)</p>"
+                : "<i>(it will be withdrawn from your&nbsp;IGL balance)</i>");
 
             Swal.fire({
                 title: 'One step left',
@@ -134,15 +134,15 @@ class BuyHpEasy extends React.Component {
                     let isExtraTokensNeeded = this.props.easyBalance - this.props.PURCHASE_COST_ETH / 1000000000000000000 < 0;
                     let html = !isTokenPaymentNeeded
                         ? "Congradulation! You have renewed your position for current HP"
-                        : "Nice, " + this.props.PURCHASE_COST_ETH / 1000000000000000000 + "&nbsp;ETH is paid! <p>  Now you need to pay <b>" + this.props.PURCHASE_COST_ETH / 1000000000000000000 + "&nbsp;EASY</b><br>" + (isExtraTokensNeeded
-                            ? "<i>(it costs just <b>" + this.props.PURCHASE_COST_EASY_ETH_EQUIVALENT / 1000000000000000000 + "&nbsp;ETH</i></b>)</p>"
-                            : "<i>(it will be withdrawn from your EASY balance)</i></p>");
+                        : "Nice, " + this.props.PURCHASE_COST_ETH / 1000000000000000000 + "&nbsp;BNB is paid! <p>  Now you need to pay <b>" + this.props.PURCHASE_COST_ETH / 1000000000000000000 + "&nbsp;IGL</b><br>" + (isExtraTokensNeeded
+                            ? "<i>(it costs just <b>" + this.props.PURCHASE_COST_EASY_ETH_EQUIVALENT / 1000000000000000000 + "&nbsp;BNB</i></b>)</p>"
+                            : "<i>(it will be withdrawn from your IGL balance)</i></p>");
 
                     Swal.fire({
                         icon: isTokenPaymentNeeded ? 'info' : 'success',
                         title: isTokenPaymentNeeded ? 'Second step' : 'Success',
                         showCancelButton: isTokenPaymentNeeded,
-                        confirmButtonText: isTokenPaymentNeeded ? 'Pay EASY' : 'Great',
+                        confirmButtonText: isTokenPaymentNeeded ? 'Pay IGL' : 'Great',
                         cancelButtonText: 'I\'ll do it later',
                         html: html
                     }).then((result) => {
@@ -172,15 +172,15 @@ class BuyHpEasy extends React.Component {
                 result => {
                     let isExtraTokensNeeded = this.props.easyBalance - this.props.PURCHASE_COST_ETH / 1000000000000000000 < 0;
                     let html = !isTokenPaymentNeeded
-                        ? "Congradulation! You have purchased one more HPEASY"
-                        : "Nice, " + this.props.PURCHASE_COST_ETH / 1000000000000000000 + "&nbsp;ETH is paid! <br>  <p>Now you need to pay <b>" + this.props.PURCHASE_COST_ETH / 1000000000000000000 + "&nbsp;EASY</b><br>" + (isExtraTokensNeeded
-                            ? "<i>(it costs just <b>" + this.props.PURCHASE_COST_EASY_ETH_EQUIVALENT / 1000000000000000000 + "&nbsp;ETH</i></b>)</p>"
-                            : "<i>(it will be withdrawn from your EASY balance)</i></p>");
+                        ? "Congradulation! You have purchased one more INFINITY GLOBAL"
+                        : "Nice, " + this.props.PURCHASE_COST_ETH / 1000000000000000000 + "&nbsp;BNB is paid! <br>  <p>Now you need to pay <b>" + this.props.PURCHASE_COST_ETH / 1000000000000000000 + "&nbsp;IGL</b><br>" + (isExtraTokensNeeded
+                            ? "<i>(it costs just <b>" + this.props.PURCHASE_COST_EASY_ETH_EQUIVALENT / 1000000000000000000 + "&nbsp;BNB</i></b>)</p>"
+                            : "<i>(it will be withdrawn from your IGL balance)</i></p>");
                     Swal.fire({
                         icon: isTokenPaymentNeeded ? 'info' : 'success',
                         title: isTokenPaymentNeeded ? 'Second step' : 'Success',
                         showCancelButton: isTokenPaymentNeeded,
-                        confirmButtonText: isTokenPaymentNeeded ? 'Pay EASY' : 'Great',
+                        confirmButtonText: isTokenPaymentNeeded ? 'Pay IGL' : 'Great',
                         cancelButtonText: 'I\'ll do it later',
                         html: html
                     }).then((result) => {
@@ -234,14 +234,14 @@ class BuyHpEasy extends React.Component {
 
     async handleSuccessfulPayment(isEthPaymentNeeded, isRenew, isExtraTokensNeeded) {
         let html = isEthPaymentNeeded ?
-            "Nice, " + this.props.PURCHASE_COST_ETH / 1000000000000000000 + "&nbsp;EASY is paid! <p> Now you need to pay" + this.props.PURCHASE_COST_ETH / 1000000000000000000 + "&nbsp;ETH</p>"
-            : "Congradulation! You " + (isRenew ? "have renewed your position" : "have purchased one more HPEASY");
+            "Nice, " + this.props.PURCHASE_COST_ETH / 1000000000000000000 + "&nbsp;IGL is paid! <p> Now you need to pay" + this.props.PURCHASE_COST_ETH / 1000000000000000000 + "&nbsp;BNB</p>"
+            : "Congradulation! You " + (isRenew ? "have renewed your position" : "have purchased one more INFINITY GLOBAL");
 
         Swal.fire({
             icon: isEthPaymentNeeded ? 'info' : 'success',
             title: isEthPaymentNeeded ? 'Second step' : 'Success',
             showCancelButton: isEthPaymentNeeded,
-            confirmButtonText: isEthPaymentNeeded ? 'Pay ' + this.props.PURCHASE_COST_ETH / 1000000000000000000 + '&nbsp;ETH' : 'Great',
+            confirmButtonText: isEthPaymentNeeded ? 'Pay ' + this.props.PURCHASE_COST_ETH / 1000000000000000000 + '&nbsp;BNB' : 'Great',
             cancelButtonText: 'I\'ll do it later',
             html: html
         }).then((result) => {
@@ -274,8 +274,8 @@ class BuyHpEasy extends React.Component {
         return (
             <div className={this.props.isRenew ? "hp_button renew readonly" : "hp_button readonly"} id="purchase" onClick={this.handleBuyHpEasy.bind(this)}>
                 {!this.props.isRenew
-                    ? "Buy HPEASY: " + this.props.PURCHASE_COST_ETH / 1000000000000000000 + " ETH/EASY"
-                    : "Renew for " + this.props.PURCHASE_COST_ETH / 1000000000000000000 + " ETH/EASY"}
+                    ? "Buy IGL: " + this.props.PURCHASE_COST_ETH / 1000000000000000000 + " BNB/IGL"
+                    : "Renew for " + this.props.PURCHASE_COST_ETH / 1000000000000000000 + " BNB/IGL"}
             </div>
         )
     }

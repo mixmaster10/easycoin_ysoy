@@ -67,9 +67,9 @@ class EasyAdmin extends React.Component {
 
         Swal.fire({
             icon: 'question',
-            title: 'Confirm ETH/EASY exchange rate change?',
+            title: 'Confirm BNB/IGL exchange rate change?',
             showCancelButton: true,
-            html: 'Are you sure you want to change ETH/EASY exchange rate to <b>' + this.state.exchangeRateCandidate + "</b> (1 ETH = " + this.state.exchangeRateCandidate + " EASY <br>(old exchange rate is <b>" + this.state.exchangeRate + "</b>)"
+            html: 'Are you sure you want to change BNB/IGL exchange rate to <b>' + this.state.exchangeRateCandidate + "</b> (1 BNB = " + this.state.exchangeRateCandidate + " EASY <br>(old exchange rate is <b>" + this.state.exchangeRate + "</b>)"
         }).then((result) => {
             if (result.isConfirmed) {
                 this.chageExchangeRate();
@@ -88,7 +88,7 @@ class EasyAdmin extends React.Component {
                     Swal.fire({
                         icon: 'success',
                         title: 'Success',
-                        html: 'Nice! ETH/EASY exchange rate has been changed to <b>' + this.state.exchangeRateCandidate + '</b>. <br>Current page will be reloaded'
+                        html: 'Nice! BNB/IGL exchange rate has been changed to <b>' + this.state.exchangeRateCandidate + '</b>. <br>Current page will be reloaded'
                     }).then(result => {
                         this.changeLoader(false);
                         window.location.reload();
@@ -172,7 +172,7 @@ class EasyAdmin extends React.Component {
             icon: 'question',
             title: 'Confirm transfer funds',
             showCancelButton: true,
-            html: 'Are you sure you want to transfer <b>' + this.state.transferAmount + " ETH</b> from <b>EASY&nbsp;smartcontract</b> to <b>" + this.state.transferAddress + "</b> address? This action is irreversible!"
+            html: 'Are you sure you want to transfer <b>' + this.state.transferAmount + " ETH</b> from <b>IGL&nbsp;smartcontract</b> to <b>" + this.state.transferAddress + "</b> address? This action is irreversible!"
         }).then((result) => {
             if (result.isConfirmed) {
                 this.transferFunds();
@@ -190,7 +190,7 @@ class EasyAdmin extends React.Component {
                     Swal.fire({
                         icon: 'success',
                         title: 'Success',
-                        html: 'Nice! <b>' + this.state.transferAmount + 'ETH</b>s were transfered to <b>' + this.state.transferAddress + '</b>. '
+                        html: 'Nice! <b>' + this.state.transferAmount + 'BNB</b>s were transfered to <b>' + this.state.transferAddress + '</b>. '
                     }).then(result => {
                         this.changeLoader(false);
                     });
@@ -248,7 +248,7 @@ class EasyAdmin extends React.Component {
             icon: 'question',
             title: 'Confirm owner change',
             showCancelButton: true,
-            html: 'Are you sure you want to change <b>EASY contract</b> owner to <b>' + this.state.newOwnerCandidate + "</b> <br>(current contract owner is <i>" + this.props.owner + "</i>)"
+            html: 'Are you sure you want to change <b>IGL contract</b> owner to <b>' + this.state.newOwnerCandidate + "</b> <br>(current contract owner is <i>" + this.props.owner + "</i>)"
         }).then((result) => {
             if (result.isConfirmed) {
                 this.chageOwner();
@@ -266,7 +266,7 @@ class EasyAdmin extends React.Component {
                     Swal.fire({
                         icon: 'success',
                         title: 'Success',
-                        html: 'Nice! EASY contract ownership has been transfered to <b>' + this.state.newOwnerCandidate + '</b>. <p>New contract owner must login to this page and accept ownership, meanwhile <b>' + this.props.owner + '</b> will stay the contract owner</p><p>Current page will be reloaded</b>'
+                        html: 'Nice! IGL contract ownership has been transfered to <b>' + this.state.newOwnerCandidate + '</b>. <p>New contract owner must login to this page and accept ownership, meanwhile <b>' + this.props.owner + '</b> will stay the contract owner</p><p>Current page will be reloaded</b>'
                     }).then(result => {
                         this.changeLoader(false);
                         window.location.reload();
@@ -299,7 +299,7 @@ class EasyAdmin extends React.Component {
     render() {
         return (
             <div className="admin-sub-block">
-                <h1>EASY ADMIN</h1>
+                <h1>IGL ADMIN</h1>
                 <p>Contract address:
                     <a target="_blank" rel="noopener noreferrer" href={myConfig.ETHERSCAN_DOMAIN + "address/" + myConfig.CONTRACT_ADDRESS_EASYCOIN}>{myConfig.CONTRACT_ADDRESS_EASYCOIN}</a>
                 </p>
@@ -310,7 +310,7 @@ class EasyAdmin extends React.Component {
                             CURRENT EXCHANGE RATE:
                         </label>
                         <div className="num-value">
-                            {this.state.exchangeRate} ETH/EASY
+                            {this.state.exchangeRate} BNB/IGL
                         </div>
                     </div>
                     <div className="subDiv">
@@ -318,19 +318,19 @@ class EasyAdmin extends React.Component {
                             NEW EXCHANGE RATE:
                         </label>
                         <input type="number" className="numberInput" step="1" onChange={this.handleExchangeRateValueChange.bind(this)} />
-                        <div> ETH</div>
+                        <div> BNB</div>
                         <div className="confirm-button" onClick={this.handleChageExchangeRate.bind(this)}>Change</div>
                     </div>
                 </div>
 
-                <h3>EASY token contract funds</h3>
+                <h3>IGL token contract funds</h3>
                 <div className="data-change-container">
                     <div className="subDiv">
                         <label>
-                            TOTAL EASY CONTRACT BALANCE:
+                            TOTAL IGL CONTRACT BALANCE:
                         </label>
                         <div className="num-value">
-                            {this.state.balance} ETH
+                            {this.state.balance} BNB
                         </div>
                     </div>
                     <div className="subDiv">
@@ -338,7 +338,7 @@ class EasyAdmin extends React.Component {
                             TRANSFER AMOUNT:
                         </label>
                         <input type="number" className="numberInput" onChange={this.handleTransferAmountChange.bind(this)} />
-                        <div> ETH</div>
+                        <div> BNB</div>
                     </div>
                     <div className="subDiv">
                         <label className="short">
@@ -349,7 +349,7 @@ class EasyAdmin extends React.Component {
                     </div>
                 </div>
 
-                <h3>EASY smartcontract owner</h3>
+                <h3>IGL smartcontract owner</h3>
                 <div className="data-change-container">
                     <div className="subDiv">
                         <label className="short">
