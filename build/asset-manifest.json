@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/static/css/main.4631e0de.chunk.css",
+    "main.js": "/static/js/main.7b6ceacc.chunk.js",
+    "main.js.map": "/static/js/main.7b6ceacc.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.83c3e0c4.js",
+    "runtime-main.js.map": "/static/js/runtime-main.83c3e0c4.js.map",
+    "static/js/2.3ee87afa.chunk.js": "/static/js/2.3ee87afa.chunk.js",
+    "static/js/2.3ee87afa.chunk.js.map": "/static/js/2.3ee87afa.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.e966b7aa61e977f365dbac856dbccf29.js": "/precache-manifest.e966b7aa61e977f365dbac856dbccf29.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.4631e0de.chunk.css.map": "/static/css/main.4631e0de.chunk.css.map",
+    "static/js/2.3ee87afa.chunk.js.LICENSE.txt": "/static/js/2.3ee87afa.chunk.js.LICENSE.txt",
+    "static/media/2nd_registration_step1.svg": "/static/media/2nd_registration_step1.e798d677.svg",
+    "static/media/App.scss": "/static/media/background2.d32d0bc6.png",
+    "static/media/Dashboard.scss": "/static/media/circles.1dea5828.png",
+    "static/media/jackpot_.png": "/static/media/jackpot_.d5219990.png",
+    "static/media/jackpot_white.png": "/static/media/jackpot_white.5b46f7b1.png",
+    "static/media/left_arrow.png": "/static/media/left_arrow.708c670e.png",
+    "static/media/logo-.svg": "/static/media/logo-.40b7f71a.svg",
+    "static/media/nlogo.png": "/static/media/nlogo.4a6aed4f.png",
+    "static/media/right_arrow.png": "/static/media/right_arrow.465e85a4.png",
+    "static/media/top_arrow.png": "/static/media/top_arrow.5ef7d8c8.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.83c3e0c4.js",
+    "static/js/2.3ee87afa.chunk.js",
+    "static/css/main.4631e0de.chunk.css",
+    "static/js/main.7b6ceacc.chunk.js"
+  ]
+}

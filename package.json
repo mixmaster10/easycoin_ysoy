@@ -8,6 +8,7 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "moment": "^2.27.0",
+    "netlify-cli": "^5.2.6",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-custom-scrollbars": "^4.2.1",
