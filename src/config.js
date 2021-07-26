@@ -12,7 +12,7 @@ export const myConfig = {
     //CONTRACT_ADDRESS_EASYCOIN: '0x5c4DB9783541D6c303E02Cd7187b7179444dbd33', //testnet, unoptimized: '0x2619bfab748a9a215f5dc3123b80b32391ea44d5', //testnet  
     INFURA_API: 'wss://mainnet.infura.io/ws/v3/434ccecefa2543e293ff9cc3a556c87f',    
     ETHERSCAN_DOMAIN: 'https://bscscan.com/', 
-    CONTRACT_ADDRESS_HPEASY: '0x923553db6fc9686af3e9281ea7de39cb0ea7dac5',  //mainnet
-    CONTRACT_ADDRESS_EASYCOIN: '0x21d1ea9d36fdef4bf3432052b3f77ecf85c86c73', //mainnet
+    CONTRACT_ADDRESS_HPEASY: '0x53F32601057fcEB1b8415990c3e28b6C7EeD3C54',  //mainnet
+    CONTRACT_ADDRESS_EASYCOIN: '0x6bc8ef028e5c144f63401910683af25b92c9996e', //mainnet
     HPEASY_FIRST_BLOCK: 11171822
 }
