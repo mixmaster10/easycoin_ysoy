@@ -1,7 +1,6 @@
 [build]
-  command = "npm run build"
-  publish="path-to-react-app/build"
-  base = "path-to-react-app"
+  command = "yarn build"
+  publish="kind-noyce-406008/build"
 
   [[redirects]]
   from = "/*"
