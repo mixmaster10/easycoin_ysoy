@@ -1,6 +1,6 @@
 [build]
   command = "yarn build"
-  publish="kind-noyce-406008/build"
+  publish="/opt/build/repo/kind-noyce-406008/build"
 
   [[redirects]]
   from = "/*"
