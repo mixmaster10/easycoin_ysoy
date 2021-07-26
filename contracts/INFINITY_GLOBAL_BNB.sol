@@ -40,10 +40,10 @@ contract SafeMath {
 
 
 // ----------------------------------------------------------------------------
-// ERC20 Token, with the addition of symbol, name and decimals and assisted
+// BEP20 Token, with the addition of symbol, name and decimals and assisted
 // token transfers
 // ----------------------------------------------------------------------------
-abstract contract ERC20 {
+abstract contract BEP20 {
     function totalSupply() virtual external view returns (uint);
     function balanceOf(address tokenOwner) virtual external view returns (uint balance);
     function allowance(address tokenOwner, address spender) virtual external view returns (uint remaining);
@@ -105,12 +105,13 @@ contract Owned {
 
 
 // ----------------------------------------------------------------------------
-// ERC20 Token, with the addition of symbol, name and decimals and assisted
+// BEP20 Token, with the addition of symbol, name and decimals and assisted
 // token transfers
 // ----------------------------------------------------------------------------
-contract INFINITYGLOBAL is ERC20, Owned, SafeMath {
+contract INFINITYGLOBALBNB is BEP20, Owned, SafeMath {
     string constant public symbol = "IGL";
-    string constant public name = "INFINITY GLOBAL";
+    string constant public name = "INFINITY GLOBAL BNB";
+
     uint8 constant public decimals = 18;
     uint constant private _totalSupply = 20000000 * 10 ** 18;
     uint private _exchangeRate;
@@ -266,10 +267,10 @@ contract INFINITYGLOBAL is ERC20, Owned, SafeMath {
     
 
     // ------------------------------------------------------------------------
-    // Owner can transfer out any accidentally sent ERC20 tokens
+    // Owner can transfer out any accidentally sent BEP20 tokens
     // ------------------------------------------------------------------------
-    function transferAnyERC20Token(address tokenAddress, uint tokens) external onlyOwner returns (bool success) {
-        return ERC20(tokenAddress).transfer(owner, tokens);
+    function transferAnybep20Token(address tokenAddress, uint tokens) external onlyOwner returns (bool success) {
+        return BEP20(tokenAddress).transfer(owner, tokens);
     }
 
 

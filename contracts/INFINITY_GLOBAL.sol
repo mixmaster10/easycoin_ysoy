@@ -2,7 +2,7 @@
 
 pragma solidity ^0.6.12;
 
-abstract contract ERC20  {
+abstract contract BEP20  {
     function transfer(address to, uint tokens) virtual public returns (bool success);
 }
 
@@ -33,7 +33,7 @@ contract Owned {
     }
 }
 
-contract HPEASYETH is Owned {
+contract INFINITYGLOBAL is Owned {
     struct User {
         uint id;
         address referrer;
@@ -76,7 +76,7 @@ contract HPEASYETH is Owned {
         uint bet_size; 
     }
 
-    string public name = "HPEASY ETH";
+    string public name = "IGL";
     uint public regCost;
     address public tokenAddress;
     uint public lastUserId = 1;
@@ -113,7 +113,8 @@ contract HPEASYETH is Owned {
     /* 
     CONTRACT OWNER:     0x55aAf5708707c7c6d404F11ABC739296A2e28Ef8
     GENESIS:            0x803c698f680e702609fb09f7782bea2ccd3cbda0
-    TOKEN ADDRESS:      0x48257b719e22835b33d30e88ca96aac7091bf301 
+    TOKEN ADDRESS:      0x48257b719e22835b33d30e88ca96aac7091bf301
+    NEW FOUNDERS:       [ "0x953Ae983dDD88E6B6E66e26E849B0ad47c12d17A", "0xDE2d50B49D1509b87eE615f7dD3d7Df11b64a281", "0xa804d0283C840ffe3478C41D23ad457BE9bC0cd4" ] 
     FOUNDERS:           [ "0xb01e70b4d1775335364d16467009062f2259ec6c", "0x1FF60A59E4E349C55cf133cC95a9a6CF3A5085f7", "0x115A844fAbb3D725f7Da4aaF1BC78b196FaAFF57", "0x07a778d40F87977C65F74983E731c32A6D8b4b25", "0xD8835cB071AaF9B56b1aD296415e5e3a17a9aD8e", "0x7B820202e85ba5927D77999c205F1d90a139Ef1f", "0xe7b3c2c91f80517ddeff6ad4c9701e28a192f02f", "0xe8bb290eead75e1b4f616bf0c99b7f60cf20ba93" ] 
     FOUNDERS [OLD, 20]: [ "0xb705c8a741344328dbb31b108ecd93b5a7284b5c", "0x43a75f303dea0384deaf6a11c37258b5ac3686a8", "0x1a376adcf7b07eb941ee9d7807d7007fd57889e4", "0x115A844fAbb3D725f7Da4aaF1BC78b196FaAFF57", "0x787fB039be9e5a5Ee2365c3754c9d16c51963be2", "0x728A0f24975730D328C6667aebAb30a62f5198a2", "0x67De1Ce616c9268448e57713512Fa97A8e4531B5", "0x6D9E19F646b5E4B8B394EcA8aeb3C7fB973C107e", "0xEc8955E1d9521496973bBF3bf81DfB3F72d0aeB3", "0xca6d91d0737f3760fd375a3abf5bcfb00eab9455", "0xc8a2b90d8cf47f7b02c2cc586efc4537c2eac9ea", "0xb9085052e6a253c789d3fca9f9cba6fa0367a1c8", "0x3295a3ae063c008e05cfda27ee16ba30a4ffaaf3", "0x91c3446e12bf00191cf00568c212c0192bef25b4", "0xbca80f1146052fde9ac97a1292813a232dda9a2e", "0x36e4a289bf4176bbf0d63b9ed6d5f1142062d2ea", "0x744d5fc65a61a859ad9e32dbcbbd5937161b63fe", "0xb01e70b4d1775335364d16467009062f2259ec6c", "0xe7b3c2c91f80517ddeff6ad4c9701e28a192f02f", "0xe8bb290eead75e1b4f616bf0c99b7f60cf20ba93" ] 
     */
@@ -597,7 +598,7 @@ contract HPEASYETH is Owned {
     }
 
     function payInTokens(address to, uint amount) private returns (bool success) {
-        return ERC20(tokenAddress).transfer(to, amount);
+        return BEP20(tokenAddress).transfer(to, amount);
     }
 
     

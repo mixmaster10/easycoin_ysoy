@@ -2,7 +2,7 @@ import { myConfig } from '../config.js';
 import Web3 from 'web3';
 import hpeasyAbi from './hpeasy_abi.json'
 import easycoinAbi from './easycoin_abi.json';
-import poolAbi from './pool_abi.json';
+// import poolAbi from './pool_abi.json';
 
 
 const utils = {
