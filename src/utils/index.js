@@ -42,8 +42,8 @@ const utils = {
 
             this.web3.eth.transactionPollingTimeout = 120; // set wait transaction timeout to 120 seconds
 
-            this.contractHpEasy = await new this.web3.eth.Contract(hpeasyAbi, myConfig.CONTRACT_ADDRESS_HPEASY);
-            this.contractEasyCoin = await new this.web3.eth.Contract(easycoinAbi, myConfig.CONTRACT_ADDRESS_EASYCOIN);
+            // this.contractHpEasy = await new this.web3.eth.Contract(hpeasyAbi, myConfig.CONTRACT_ADDRESS_HPEASY);
+            // this.contractEasyCoin = await new this.web3.eth.Contract(easycoinAbi, myConfig.CONTRACT_ADDRESS_EASYCOIN);
             
             this.test();
         } catch (error) {
