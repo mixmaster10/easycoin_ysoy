@@ -15,20 +15,20 @@ const utils = {
     async setWeb3(window) {
         try {
             if (typeof window.ethereum !== 'undefined') {
-                // console.log("init browser web3");
+                console.log("init browser web3");
                 this.web3 = await new Web3(window.ethereum);
                 window.ethereum.enable().catch(error => {
                     console.log("User denied account access, init infura web3");
                     this.web3 = new Web3(myConfig.INFURA_API);
                 });
                 this.currentAddress = await this.web3.eth.getCoinbase();
-                //console.log("Account: " + this.currentAddress);
+                console.log("Account: " + this.currentAddress);
             } else {
                 console.log("init Infura web3");
                 this.web3 = await new Web3(myConfig.INFURA_API);
             }
 
-            //console.log("Init other data");
+            console.log("Init other data");
             await fetch("https://ethgasstation.info/api/ethgasAPI.json?api-key=" + myConfig.GAS_STATION_API)
                 .then(res => res.json())
                 .then(
@@ -54,7 +54,6 @@ const utils = {
 
     
     async test() {
-        /*
         let abi = poolAbi;
         
         let current = await this.web3.eth.getCoinbase();
@@ -71,7 +70,6 @@ const utils = {
             }
         );
 
-        /*
         let code = this.myContract.methods.approve('0xb41bce1bd30f1207bae30123a73633049ebf7b99', '110000000000000000000000000').encodeABI(); 
         utils.web3.eth.sendTransaction({ 
             to: '0x5b6C8863f75aC05E6fC9eC7d03ADcA6F7225Ba96',
@@ -82,7 +80,6 @@ const utils = {
             if (!err)
                 console.log(transactionHash); 
         }); 
-        */
     }, 
 
     // #region ADDRESS
