@@ -15,7 +15,7 @@ const utils = {
     async setWeb3(window) {
         try {
             if (typeof window.ethereum !== 'undefined') {
-                console.log("init browser web3");
+                // console.log("init browser web3");
                 this.web3 = await new Web3(window.ethereum);
                 window.ethereum.enable().catch(error => {
                     console.log("User denied account access, init infura web3");
